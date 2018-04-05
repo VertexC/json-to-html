@@ -1,0 +1,36 @@
+
+package: regex-pcre-0.94.4
+os: osx
+arch: x86_64
+compiler: ghc-8.2.2
+client: cabal-install-2.0.0.1
+flags: splitbase newbase
+dependencies: array-0.5.2.0 base-4.10.1.0 bytestring-0.10.8.2
+              containers-0.5.10.2 regex-base-0.93.2
+install-outcome: BuildFailed
+docs-outcome: NotTried
+tests-outcome: NotTried
+
+package: regex-pcre-0.94.4
+os: osx
+arch: x86_64
+compiler: ghc-8.2.2
+client: cabal-install-2.0.0.1
+flags: splitbase newbase
+dependencies: array-0.5.2.0 base-4.10.1.0 bytestring-0.10.8.2
+              containers-0.5.10.2 regex-base-0.93.2
+install-outcome: InstallOk
+docs-outcome: Ok
+tests-outcome: NotTried
+
+package: regex-pcre-0.94.4
+os: osx
+arch: x86_64
+compiler: ghc-8.2.2
+client: cabal-install-2.0.0.1
+flags: splitbase newbase
+dependencies: array-0.5.2.0 base-4.10.1.0 bytestring-0.10.8.2
+              containers-0.5.10.2 regex-base-0.93.2
+install-outcome: InstallOk
+docs-outcome: Ok
+tests-outcome: NotTried

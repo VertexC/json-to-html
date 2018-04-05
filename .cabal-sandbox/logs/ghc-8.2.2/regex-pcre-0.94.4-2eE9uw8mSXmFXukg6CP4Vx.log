@@ -1,0 +1,205 @@
+cabal: Entering directory '/var/folders/3n/hsqb5bs133s01dcmfbtrq5z00000gn/T/cabal-tmp-12015/regex-pcre-0.94.4'
+Configuring regex-pcre-0.94.4...
+Preprocessing library for regex-pcre-0.94.4..
+Building library for regex-pcre-0.94.4..
+[1 of 6] Compiling Text.Regex.PCRE.Wrap ( dist/dist-sandbox-8636d1e3/build/Text/Regex/PCRE/Wrap.hs, dist/dist-sandbox-8636d1e3/build/Text/Regex/PCRE/Wrap.o )
+[2 of 6] Compiling Text.Regex.PCRE.String ( Text/Regex/PCRE/String.hs, dist/dist-sandbox-8636d1e3/build/Text/Regex/PCRE/String.o )
+[3 of 6] Compiling Text.Regex.PCRE.Sequence ( Text/Regex/PCRE/Sequence.hs, dist/dist-sandbox-8636d1e3/build/Text/Regex/PCRE/Sequence.o )
+[4 of 6] Compiling Text.Regex.PCRE.ByteString ( Text/Regex/PCRE/ByteString.hs, dist/dist-sandbox-8636d1e3/build/Text/Regex/PCRE/ByteString.o )
+[5 of 6] Compiling Text.Regex.PCRE.ByteString.Lazy ( Text/Regex/PCRE/ByteString/Lazy.hs, dist/dist-sandbox-8636d1e3/build/Text/Regex/PCRE/ByteString/Lazy.o )
+[6 of 6] Compiling Text.Regex.PCRE  ( Text/Regex/PCRE.hs, dist/dist-sandbox-8636d1e3/build/Text/Regex/PCRE.o )
+
+Text/Regex/PCRE.hs:61:13: warning: [-Wdeprecations]
+    In the use of ‘versionTags’ (imported from Data.Version):
+    Deprecated: "See GHC ticket #2496"
+   |
+61 |           , versionTags = ["unstable"]
+   |             ^^^^^^^^^^^
+[1 of 6] Compiling Text.Regex.PCRE.Wrap ( dist/dist-sandbox-8636d1e3/build/Text/Regex/PCRE/Wrap.hs, dist/dist-sandbox-8636d1e3/build/Text/Regex/PCRE/Wrap.p_o )
+[2 of 6] Compiling Text.Regex.PCRE.String ( Text/Regex/PCRE/String.hs, dist/dist-sandbox-8636d1e3/build/Text/Regex/PCRE/String.p_o )
+[3 of 6] Compiling Text.Regex.PCRE.Sequence ( Text/Regex/PCRE/Sequence.hs, dist/dist-sandbox-8636d1e3/build/Text/Regex/PCRE/Sequence.p_o )
+[4 of 6] Compiling Text.Regex.PCRE.ByteString ( Text/Regex/PCRE/ByteString.hs, dist/dist-sandbox-8636d1e3/build/Text/Regex/PCRE/ByteString.p_o )
+[5 of 6] Compiling Text.Regex.PCRE.ByteString.Lazy ( Text/Regex/PCRE/ByteString/Lazy.hs, dist/dist-sandbox-8636d1e3/build/Text/Regex/PCRE/ByteString/Lazy.p_o )
+[6 of 6] Compiling Text.Regex.PCRE  ( Text/Regex/PCRE.hs, dist/dist-sandbox-8636d1e3/build/Text/Regex/PCRE.p_o )
+
+Text/Regex/PCRE.hs:61:13: warning: [-Wdeprecations]
+    In the use of ‘versionTags’ (imported from Data.Version):
+    Deprecated: "See GHC ticket #2496"
+   |
+61 |           , versionTags = ["unstable"]
+   |             ^^^^^^^^^^^
+Preprocessing library for regex-pcre-0.94.4..
+Running Haddock on library for regex-pcre-0.94.4..
+
+Text/Regex/PCRE.hs:61:13: warning: [-Wdeprecations]
+    In the use of ‘versionTags’ (imported from Data.Version):
+    Deprecated: "See GHC ticket #2496"
+   |
+61 |           , versionTags = ["unstable"]
+   |             ^^^^^^^^^^^
+Haddock coverage:
+  22% ( 12 / 54) in 'Text.Regex.PCRE.Wrap'
+  Missing documentation for:
+    CompOption (Text/Regex/PCRE/Wrap.hsc:107)
+    ExecOption (Text/Regex/PCRE/Wrap.hsc:108)
+    =~ (Text/Regex/PCRE/Wrap.hsc:141)
+    =~~ (Text/Regex/PCRE/Wrap.hsc:143)
+    StartOffset (Text/Regex/PCRE/Wrap.hsc:103)
+    EndOffset (Text/Regex/PCRE/Wrap.hsc:104)
+    ReturnCode (Text/Regex/PCRE/Wrap.hsc:109)
+    WrapError (Text/Regex/PCRE/Wrap.hsc:105)
+    wrapTest (Text/Regex/PCRE/Wrap.hsc:123)
+    wrapCount (Text/Regex/PCRE/Wrap.hsc:136)
+    configUTF8 (Text/Regex/PCRE/Wrap.hsc:139)
+    getNumSubs (Text/Regex/PCRE/Wrap.hsc:138)
+    unusedOffset (Text/Regex/PCRE/Wrap.hsc:116)
+    compBlank (Text/Regex/PCRE/Wrap.hsc:114)
+    compAnchored (Text/Regex/PCRE/Wrap.hsc:369)
+    compAutoCallout (Text/Regex/PCRE/Wrap.hsc:371)
+    compCaseless (Text/Regex/PCRE/Wrap.hsc:373)
+    compDollarEndOnly (Text/Regex/PCRE/Wrap.hsc:375)
+    compDotAll (Text/Regex/PCRE/Wrap.hsc:377)
+    compExtended (Text/Regex/PCRE/Wrap.hsc:379)
+    compExtra (Text/Regex/PCRE/Wrap.hsc:381)
+    compFirstLine (Text/Regex/PCRE/Wrap.hsc:383)
+    compMultiline (Text/Regex/PCRE/Wrap.hsc:385)
+    compNoAutoCapture (Text/Regex/PCRE/Wrap.hsc:387)
+    compUngreedy (Text/Regex/PCRE/Wrap.hsc:389)
+    compUTF8 (Text/Regex/PCRE/Wrap.hsc:391)
+    compNoUTF8Check (Text/Regex/PCRE/Wrap.hsc:393)
+    execBlank (Text/Regex/PCRE/Wrap.hsc:115)
+    execAnchored (Text/Regex/PCRE/Wrap.hsc:384)
+    execNotBOL (Text/Regex/PCRE/Wrap.hsc:386)
+    execNotEOL (Text/Regex/PCRE/Wrap.hsc:388)
+    execNotEmpty (Text/Regex/PCRE/Wrap.hsc:390)
+    execNoUTF8Check (Text/Regex/PCRE/Wrap.hsc:392)
+    execPartial (Text/Regex/PCRE/Wrap.hsc:394)
+    retOk (Text/Regex/PCRE/Wrap.hsc:117)
+    retNoMatch (Text/Regex/PCRE/Wrap.hsc:392)
+    retNull (Text/Regex/PCRE/Wrap.hsc:394)
+    retBadOption (Text/Regex/PCRE/Wrap.hsc:396)
+    retBadMagic (Text/Regex/PCRE/Wrap.hsc:398)
+    retUnknownNode (Text/Regex/PCRE/Wrap.hsc:400)
+    retNoMemory (Text/Regex/PCRE/Wrap.hsc:402)
+    retNoSubstring (Text/Regex/PCRE/Wrap.hsc:404)
+  33% ( 13 / 39) in 'Text.Regex.PCRE.String'
+  Missing documentation for:
+    CompOption (Text/Regex/PCRE/Wrap.hsc:107)
+    ExecOption (Text/Regex/PCRE/Wrap.hsc:108)
+    ReturnCode (Text/Regex/PCRE/Wrap.hsc:109)
+    WrapError (Text/Regex/PCRE/Wrap.hsc:105)
+    unusedOffset (Text/Regex/PCRE/Wrap.hsc:116)
+    compBlank (Text/Regex/PCRE/Wrap.hsc:114)
+    compAnchored (Text/Regex/PCRE/Wrap.hsc:369)
+    compAutoCallout (Text/Regex/PCRE/Wrap.hsc:371)
+    compCaseless (Text/Regex/PCRE/Wrap.hsc:373)
+    compDollarEndOnly (Text/Regex/PCRE/Wrap.hsc:375)
+    compDotAll (Text/Regex/PCRE/Wrap.hsc:377)
+    compExtended (Text/Regex/PCRE/Wrap.hsc:379)
+    compExtra (Text/Regex/PCRE/Wrap.hsc:381)
+    compFirstLine (Text/Regex/PCRE/Wrap.hsc:383)
+    compMultiline (Text/Regex/PCRE/Wrap.hsc:385)
+    compNoAutoCapture (Text/Regex/PCRE/Wrap.hsc:387)
+    compUngreedy (Text/Regex/PCRE/Wrap.hsc:389)
+    compUTF8 (Text/Regex/PCRE/Wrap.hsc:391)
+    compNoUTF8Check (Text/Regex/PCRE/Wrap.hsc:393)
+    execBlank (Text/Regex/PCRE/Wrap.hsc:115)
+    execAnchored (Text/Regex/PCRE/Wrap.hsc:384)
+    execNotBOL (Text/Regex/PCRE/Wrap.hsc:386)
+    execNotEOL (Text/Regex/PCRE/Wrap.hsc:388)
+    execNotEmpty (Text/Regex/PCRE/Wrap.hsc:390)
+    execNoUTF8Check (Text/Regex/PCRE/Wrap.hsc:392)
+    execPartial (Text/Regex/PCRE/Wrap.hsc:394)
+  33% ( 13 / 39) in 'Text.Regex.PCRE.Sequence'
+  Missing documentation for:
+    CompOption (Text/Regex/PCRE/Wrap.hsc:107)
+    ExecOption (Text/Regex/PCRE/Wrap.hsc:108)
+    ReturnCode (Text/Regex/PCRE/Wrap.hsc:109)
+    WrapError (Text/Regex/PCRE/Wrap.hsc:105)
+    unusedOffset (Text/Regex/PCRE/Wrap.hsc:116)
+    compBlank (Text/Regex/PCRE/Wrap.hsc:114)
+    compAnchored (Text/Regex/PCRE/Wrap.hsc:369)
+    compAutoCallout (Text/Regex/PCRE/Wrap.hsc:371)
+    compCaseless (Text/Regex/PCRE/Wrap.hsc:373)
+    compDollarEndOnly (Text/Regex/PCRE/Wrap.hsc:375)
+    compDotAll (Text/Regex/PCRE/Wrap.hsc:377)
+    compExtended (Text/Regex/PCRE/Wrap.hsc:379)
+    compExtra (Text/Regex/PCRE/Wrap.hsc:381)
+    compFirstLine (Text/Regex/PCRE/Wrap.hsc:383)
+    compMultiline (Text/Regex/PCRE/Wrap.hsc:385)
+    compNoAutoCapture (Text/Regex/PCRE/Wrap.hsc:387)
+    compUngreedy (Text/Regex/PCRE/Wrap.hsc:389)
+    compUTF8 (Text/Regex/PCRE/Wrap.hsc:391)
+    compNoUTF8Check (Text/Regex/PCRE/Wrap.hsc:393)
+    execBlank (Text/Regex/PCRE/Wrap.hsc:115)
+    execAnchored (Text/Regex/PCRE/Wrap.hsc:384)
+    execNotBOL (Text/Regex/PCRE/Wrap.hsc:386)
+    execNotEOL (Text/Regex/PCRE/Wrap.hsc:388)
+    execNotEmpty (Text/Regex/PCRE/Wrap.hsc:390)
+    execNoUTF8Check (Text/Regex/PCRE/Wrap.hsc:392)
+    execPartial (Text/Regex/PCRE/Wrap.hsc:394)
+  31% ( 12 / 39) in 'Text.Regex.PCRE.ByteString'
+  Missing documentation for:
+    CompOption (Text/Regex/PCRE/Wrap.hsc:107)
+    ExecOption (Text/Regex/PCRE/Wrap.hsc:108)
+    ReturnCode (Text/Regex/PCRE/Wrap.hsc:109)
+    WrapError (Text/Regex/PCRE/Wrap.hsc:105)
+    unusedOffset (Text/Regex/PCRE/Wrap.hsc:116)
+    regexec (Text/Regex/PCRE/ByteString.hs:129)
+    compBlank (Text/Regex/PCRE/Wrap.hsc:114)
+    compAnchored (Text/Regex/PCRE/Wrap.hsc:369)
+    compAutoCallout (Text/Regex/PCRE/Wrap.hsc:371)
+    compCaseless (Text/Regex/PCRE/Wrap.hsc:373)
+    compDollarEndOnly (Text/Regex/PCRE/Wrap.hsc:375)
+    compDotAll (Text/Regex/PCRE/Wrap.hsc:377)
+    compExtended (Text/Regex/PCRE/Wrap.hsc:379)
+    compExtra (Text/Regex/PCRE/Wrap.hsc:381)
+    compFirstLine (Text/Regex/PCRE/Wrap.hsc:383)
+    compMultiline (Text/Regex/PCRE/Wrap.hsc:385)
+    compNoAutoCapture (Text/Regex/PCRE/Wrap.hsc:387)
+    compUngreedy (Text/Regex/PCRE/Wrap.hsc:389)
+    compUTF8 (Text/Regex/PCRE/Wrap.hsc:391)
+    compNoUTF8Check (Text/Regex/PCRE/Wrap.hsc:393)
+    execBlank (Text/Regex/PCRE/Wrap.hsc:115)
+    execAnchored (Text/Regex/PCRE/Wrap.hsc:384)
+    execNotBOL (Text/Regex/PCRE/Wrap.hsc:386)
+    execNotEOL (Text/Regex/PCRE/Wrap.hsc:388)
+    execNotEmpty (Text/Regex/PCRE/Wrap.hsc:390)
+    execNoUTF8Check (Text/Regex/PCRE/Wrap.hsc:392)
+    execPartial (Text/Regex/PCRE/Wrap.hsc:394)
+  31% ( 12 / 39) in 'Text.Regex.PCRE.ByteString.Lazy'
+  Missing documentation for:
+    CompOption (Text/Regex/PCRE/Wrap.hsc:107)
+    ExecOption (Text/Regex/PCRE/Wrap.hsc:108)
+    ReturnCode (Text/Regex/PCRE/Wrap.hsc:109)
+    WrapError (Text/Regex/PCRE/Wrap.hsc:105)
+    unusedOffset (Text/Regex/PCRE/Wrap.hsc:116)
+    regexec (Text/Regex/PCRE/ByteString/Lazy.hs:133)
+    compBlank (Text/Regex/PCRE/Wrap.hsc:114)
+    compAnchored (Text/Regex/PCRE/Wrap.hsc:369)
+    compAutoCallout (Text/Regex/PCRE/Wrap.hsc:371)
+    compCaseless (Text/Regex/PCRE/Wrap.hsc:373)
+    compDollarEndOnly (Text/Regex/PCRE/Wrap.hsc:375)
+    compDotAll (Text/Regex/PCRE/Wrap.hsc:377)
+    compExtended (Text/Regex/PCRE/Wrap.hsc:379)
+    compExtra (Text/Regex/PCRE/Wrap.hsc:381)
+    compFirstLine (Text/Regex/PCRE/Wrap.hsc:383)
+    compMultiline (Text/Regex/PCRE/Wrap.hsc:385)
+    compNoAutoCapture (Text/Regex/PCRE/Wrap.hsc:387)
+    compUngreedy (Text/Regex/PCRE/Wrap.hsc:389)
+    compUTF8 (Text/Regex/PCRE/Wrap.hsc:391)
+    compNoUTF8Check (Text/Regex/PCRE/Wrap.hsc:393)
+    execBlank (Text/Regex/PCRE/Wrap.hsc:115)
+    execAnchored (Text/Regex/PCRE/Wrap.hsc:384)
+    execNotBOL (Text/Regex/PCRE/Wrap.hsc:386)
+    execNotEOL (Text/Regex/PCRE/Wrap.hsc:388)
+    execNotEmpty (Text/Regex/PCRE/Wrap.hsc:390)
+    execNoUTF8Check (Text/Regex/PCRE/Wrap.hsc:392)
+    execPartial (Text/Regex/PCRE/Wrap.hsc:394)
+  80% (  4 /  5) in 'Text.Regex.PCRE'
+  Missing documentation for:
+    getVersion_Text_Regex_PCRE (Text/Regex/PCRE.hs:58)
+Documentation created:
+dist/dist-sandbox-8636d1e3/doc/html/regex-pcre/index.html
+Installing library in /Users/bowenchen/coding/json-html-conversion/.cabal-sandbox/lib/x86_64-osx-ghc-8.2.2/regex-pcre-0.94.4-2eE9uw8mSXmFXukg6CP4Vx
+cabal: Leaving directory '/var/folders/3n/hsqb5bs133s01dcmfbtrq5z00000gn/T/cabal-tmp-12015/regex-pcre-0.94.4'

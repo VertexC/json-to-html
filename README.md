@@ -27,3 +27,42 @@ main = do s <- getLine
 
 
 [Maybe and Just](https://stackoverflow.com/questions/18808258/what-does-the-just-syntax-mean-in-haskell)
+
+
+### regular expression
+https://stackoverflow.com/questions/8508919/haskell-regex-syntax
+The problem is that you simply don't have the regex-posix package installed. This is the package that exports the Text.Regex.Posix module.  Text.Read is exported by the base package which comes with every Haskell distribution.
+
+You can see this by running ghc-pkg find-module Text.Read. To install the regex-posix package globally run the command cabal install regex-posix. If you don't want to install it globally or run into problems getting it to install, it would be better to try installing it with the same command in a sandbox after running cabal sandbox init in the directory of your choice.
+
+#### pcre
+[cheatsheet](https://www.debuggex.com/cheatsheet/regex/pcre)\
+```haskell
+let stringResult = "hello there" =~ "e" :: AllTextMatches [] String
+let result = getAllTextMatches stringResult
+```
+**issue**
+install pcre 
+```bash
+Wrap.hsc:148:10: fatal error: 'pcre.h' file not found
+#include <pcre.h>
+```
+**solution**
+https://github.com/facebook/duckling/pull/6
+
+cabal install regex-posix
+### cabal
+to use ghci with packages in local sanboxs
+```bash
+# For GHC < 7.6
+$ ghci -no-user-package-conf -package-conf .cabal-sandbox/i386-linux-ghc-7.4.2-packages.conf.d
+```
+
+
+
+ghci
+:quit 
+
+
+
+
