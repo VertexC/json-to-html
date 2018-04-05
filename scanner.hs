@@ -17,12 +17,17 @@ type Token = (String, Type)
 -- scan and tokenize
 scanner :: String -> String -> [Token]
 scanner [] _ = []
-scanner (x:xs) content | (x == '{') 
-                       | other wise = scanner xs content
+scanner (x:xs) content | (x == '{') = (show x, BRACE):(scanner xs content)
+                       | otherwise = scanner xs content
 
+-- show the Token
+printToken :: [(String, Type)] -> IO ()
+printToken ((content, t):xs) = do 
+  putStrLn(content)
+  putStrLn(show t)
 
 main = do 
     [f, g] <- getArgs
     s <- readFile f
     let tokens = scanner s ""
-    
+    printToken(tokens)
