@@ -52,17 +52,49 @@ https://github.com/facebook/duckling/pull/6
 
 cabal install regex-posix
 ### cabal
-to use ghci with packages in local sanboxs
+to use ghci with packages in local sandboxs
 ```bash
 # For GHC < 7.6
 $ ghci -no-user-package-conf -package-conf .cabal-sandbox/i386-linux-ghc-7.4.2-packages.conf.d
 ```
-
-
+to make hs file using sandboxs
+```bash
+cabal exec -- ghc --make diagramstutorial.lhs
+```
 
 ghci
 :quit 
 
+
+### procedure
+muti level if guard
+```haskell
+parseNumber :: String -> Maybe (String, String)
+parseNumber [] = Just ("", "")
+parseNumber (h:ls)
+    | isDigit h =
+         case () of
+           () | p == Nothing = Just([h], ls)
+              | otherwise = Just (h:fst d, snd d) -- Ends in a digit
+    | h == '.' =
+         case () of
+           () | p == Nothing = Nothing
+              | not ('.' `elem` (snd d)) = Just (h:(fst d), snd d)
+    | otherwise = Nothing
+    where 
+        p      = parseNumber ls
+        Just d = parseNumber ls
+```
+
+**warning**
+```haskell
+show '"'
+"'\"'":: String
+```
+conver char to string
+'''haskell
+str_a = ['a']
+'''
 
 
 
