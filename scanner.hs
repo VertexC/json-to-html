@@ -65,22 +65,36 @@ printToken ((content, t):xs) = do
          putStrLn(content)
          printToken xs
  
-
-
-
 -- show the ch of String
-printString :: String -> IO String
-printString [] = return ""
+printString :: String -> IO ()
+printString [] = return ()
 printString (x:xs) = do
   appendFile "output.html" (show x ++ "\n")  
   printString xs
 
 
+-- colorize the token 
+colorize :: [(String, Type)] -> String -> IO ()
+colorize [] _ = return ()
+colorize (x:xs) filepath = do 
+  return ()
+
+
+-- generate html
+generateHTML :: [(String, Type)] -> String -> IO ()
+generateHTML [] _ = return ()
+generateHTML tokens filepath = do
+  writeFile filepath ("<span style=\"font-family:monospace; white-space:pre\">")
+  colorize tokens filepath
+  appendFile filepath ("</span>\n")
+  
+  
 main = do 
-    [f, g] <- getArgs
-    s <- readFile f
+    [input_file, output_file] <- getArgs
+    s <- readFile input_file
     -- clean up the file
     writeFile "output.html" ("")
     -- printString(s)
     let tokens = scanner s "" False False
-    printToken(tokens)
+    -- printToken(tokens)
+    generateHTML tokens output_file
