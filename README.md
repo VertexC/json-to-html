@@ -96,5 +96,14 @@ conver char to string
 str_a = ['a']
 '''
 
+.e. [1,2,3]!!1 gives you 2, since lists are 0-indexed.
 
+# if in do
+https://stackoverflow.com/questions/5920888/haskell-how-can-i-use-if-statement-in-do-block-properly
 
+action = do
+    isdir <- doesDirectoryExist path
+    if not isdir
+        then handleWrong
+        else return ()
+    doOtherActions
