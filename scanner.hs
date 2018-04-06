@@ -79,7 +79,7 @@ generateShrink shrink | shrink <= 0 = ""
                       | otherwise = "    " ++ (generateShrink (shrink-1))
 
 -- colorize Brace
--- colorizeBrace :: String -> String -> Int -> IO Int
+colorizeBrace :: String -> String -> Int -> IO Int
 colorizeBrace content filepath shrink = do
   if(content == "{")
     then do 
@@ -91,6 +91,58 @@ colorizeBrace content filepath shrink = do
       appendFile filepath ("<span style=color:rgb(255,0,0)>" ++ content ++ "</span>")
       return (shrink - 1)
 
+-- colorize Bracket
+colorizeRegex :: String -> String -> Int -> IO Int
+colorizeRegex content filepath shrink = do
+  if(content == "[")
+    then do 
+      appendFile filepath ("<span style=color:rgb(5,40,49)>" ++ content ++ "</span>" ++ "\n")
+      appendFile filepath (generateShrink (shrink+1))
+      return (shrink + 1)
+    else do
+      appendFile filepath ("\n" ++ generateShrink (shrink-1))
+      appendFile filepath ("<span style=color:rgb(5,40,49)>" ++ content ++ "</span>")
+      return (shrink - 1)
+
+-- colorize Comma
+colorizeComma :: String -> String -> Int -> IO Int
+colorizeComma content filepath shrink = do
+  appendFile filepath ( "<span style=color:rgb(174,0,255)>" ++ content ++ "</span>" ++ "\n")
+  appendFile filepath ((generateShrink shrink))
+  return shrink
+
+-- colorize Colon
+colorizeColon :: String -> String -> Int -> IO Int
+colorizeColon content filepath shrink = do
+  appendFile filepath ( "<span style=color:rgb(0,153,255)>" ++ " " ++ content ++ " " ++ "</span>")
+  return shrink
+
+-- colorize Boolean
+colorizeBoolean :: String -> String -> Int -> IO Int
+colorizeBoolean content filepath shrink = do
+  appendFile filepath ( "<span style=color:rgb(224,101,240)>" ++ content ++ "</span>")
+  return shrink
+
+-- colorize Number
+colorizeNumber :: String -> String -> Int -> IO Int
+colorizeNumber content filepath shrink = do
+  appendFile filepath ( "<span style=color:rgb(32,123,66)>" ++ content ++ "</span>")
+  return shrink
+    
+-- colorize the string
+-- internal func
+colorizeStringInternal :: String -> Bool -> String
+colorizeStringInternal [] _ = ""
+colorizeStringInternal (x:xs) slash_flag 
+  | slash_flag == True = [x] ++ "</span>" ++ (colorizeStringInternal xs False)
+  | x == '\\' = "<span style=color:rgb(248,117,9)>" ++ "\\" ++ (colorizeStringInternal xs True)
+  | otherwise = [x] ++ (colorizeStringInternal xs False)
+-- outer func
+colorizeString :: String -> String -> Int -> IO Int
+colorizeString content filepath shrink = do
+  appendFile filepath ("<span style=color:rgb(0,0,255)>" ++ "&quot;" ++ (colorizeStringInternal content False) ++ "&quot;" ++ "</span>")
+  return shrink
+
 -- colorize the token 
 colorize :: [(String, Type)] -> String -> Int -> IO ()
 colorize [] _ _ = return ()
@@ -99,18 +151,22 @@ colorize ((content, t):xs) filepath shrink = do
     then do 
       new_shrink <- case t of
                   BRACE -> colorizeBrace content filepath shrink
+                  REGEX -> colorizeRegex content filepath shrink
+                  COMMA -> colorizeComma content filepath shrink 
+                  COLON -> colorizeColon content filepath shrink
+                  STRING -> colorizeString content filepath shrink
+                  BOOLEAN -> colorizeBoolean content filepath shrink
+                  NUMBER -> colorizeNumber content filepath shrink
                   _ -> do return shrink
       colorize xs filepath new_shrink
     else do 
       colorize xs filepath shrink
-    
-
 
 -- generate html
 generateHTML :: [(String, Type)] -> String -> IO ()
 generateHTML [] _ = return ()
 generateHTML tokens filepath = do
-  writeFile filepath ("<span style=\"font-family:monospace; white-space:pre\">\n")
+  writeFile filepath ("<span style=\"font-family:monospace; white-space:pre\">")
   colorize tokens filepath 0
   appendFile filepath ("\n</span>\n")
   

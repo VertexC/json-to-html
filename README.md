@@ -1,7 +1,5 @@
 ```bash
-ghc -o hello hello.hs
-$ ./hello
-Hello, World!
+
 ```
 
 
