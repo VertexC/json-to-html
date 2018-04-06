@@ -84,7 +84,7 @@ colorizeBrace content filepath shrink = do
   if(content == "{")
     then do 
       appendFile filepath ("<span style=color:rgb(255,0,0)>" ++ content ++ "</span>" ++ "\n")
-      appendFile filepath (generateShrink shrink)
+      appendFile filepath (generateShrink (shrink+1))
       return (shrink + 1)
     else do
       appendFile filepath ("\n" ++ generateShrink (shrink-1))
@@ -110,9 +110,9 @@ colorize ((content, t):xs) filepath shrink = do
 generateHTML :: [(String, Type)] -> String -> IO ()
 generateHTML [] _ = return ()
 generateHTML tokens filepath = do
-  writeFile filepath ("<span style=\"font-family:monospace; white-space:pre\">")
+  writeFile filepath ("<span style=\"font-family:monospace; white-space:pre\">\n")
   colorize tokens filepath 0
-  appendFile filepath ("</span>\n")
+  appendFile filepath ("\n</span>\n")
   
   
 main = do 
