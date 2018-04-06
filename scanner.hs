@@ -73,11 +73,37 @@ printString (x:xs) = do
   printString xs
 
 
+-- generate shrink
+generateShrink :: Int -> String
+generateShrink shrink | shrink <= 0 = ""
+                      | otherwise = "    " ++ (generateShrink (shrink-1))
+
+-- colorize Brace
+-- colorizeBrace :: String -> String -> Int -> IO Int
+colorizeBrace content filepath shrink = do
+  if(content == "{")
+    then do 
+      appendFile filepath ("<span style=color:rgb(255,0,0)>" ++ content ++ "</span>" ++ "\n")
+      appendFile filepath (generateShrink shrink)
+      return (shrink + 1)
+    else do
+      appendFile filepath ("\n" ++ generateShrink (shrink-1))
+      appendFile filepath ("<span style=color:rgb(255,0,0)>" ++ content ++ "</span>")
+      return (shrink - 1)
+
 -- colorize the token 
-colorize :: [(String, Type)] -> String -> IO ()
-colorize [] _ = return ()
-colorize (x:xs) filepath = do 
-  return ()
+colorize :: [(String, Type)] -> String -> Int -> IO ()
+colorize [] _ _ = return ()
+colorize ((content, t):xs) filepath shrink = do 
+  if t /= EMPTY
+    then do 
+      new_shrink <- case t of
+                  BRACE -> colorizeBrace content filepath shrink
+                  _ -> do return shrink
+      colorize xs filepath new_shrink
+    else do 
+      colorize xs filepath shrink
+    
 
 
 -- generate html
@@ -85,7 +111,7 @@ generateHTML :: [(String, Type)] -> String -> IO ()
 generateHTML [] _ = return ()
 generateHTML tokens filepath = do
   writeFile filepath ("<span style=\"font-family:monospace; white-space:pre\">")
-  colorize tokens filepath
+  colorize tokens filepath 0
   appendFile filepath ("</span>\n")
   
   

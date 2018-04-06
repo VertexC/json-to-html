@@ -107,3 +107,18 @@ action = do
         then handleWrong
         else return ()
     doOtherActions
+
+
+
+### fucntion return 
+In most functional languages, this would work. However, Haskell is a pure functional language. You are not allowed to do IO in functions, so the function can either be
+
+[Int] -> [Int] without performing any IO or
+[Int] -> IO [Int] with IO
+
+
+### IO int
+The return type is IO Int, use <- to assign it to a variable
+'''haskell
+return intValue
+'''
