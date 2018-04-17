@@ -31,7 +31,7 @@ Origin Json File
 HTML opened in browser
 <img src="./screenshot/result.png" width="80%">
 
-### What I Learned during this project...
+### Tricks
 
 #### Syntax
 - [About $ and .](https://stackoverflow.com/questions/940382/what-is-the-difference-between-dot-and-dollar-sign)
